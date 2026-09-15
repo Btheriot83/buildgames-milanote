@@ -48,6 +48,24 @@ type BoardState = {
   showToast: (message: string, tone?: 'ok' | 'err') => void
   clearToast: () => void
   triggerSuccess: () => void
+  applyBriefBoard: (payload: {
+    title: string
+    description: string
+    note: string
+    mode: 'llm' | 'local'
+    cards: Array<{
+      kind: CardKind
+      title: string
+      body: string
+      url?: string
+      tags: string[]
+      color?: string
+      x: number
+      y: number
+      w: number
+      h: number
+    }>
+  }) => void
 }
 
 function emptySnap(): Snapshot {
@@ -125,7 +143,7 @@ export const useBoard = create<BoardState>((set, get) => ({
         activeBoardId: snap.activeBoardId,
         seeded: true,
       })
-      get().showToast('IndexedDB unavailable — working in memory', 'err')
+      get().showToast('No local DB — memory only', 'err')
     }
   },
 
@@ -133,7 +151,7 @@ export const useBoard = create<BoardState>((set, get) => ({
     try {
       await saveSnapshot(snapshotOf(get()))
     } catch {
-      get().showToast('Could not save to IndexedDB', 'err')
+      get().showToast('Couldn’t save locally', 'err')
     }
   },
 
@@ -154,7 +172,7 @@ export const useBoard = create<BoardState>((set, get) => ({
     }
     set((s) => ({ boards: [...s.boards, board], activeBoardId: id }))
     void get().persist()
-    get().showToast('Board created')
+    get().showToast('New wall ready')
   },
 
   renameBoard: (id, title) => {
@@ -174,7 +192,7 @@ export const useBoard = create<BoardState>((set, get) => ({
       return { boards, cards, activeBoardId, selectedId: null }
     })
     void get().persist()
-    get().showToast('Board deleted')
+    get().showToast('Wall cleared')
   },
 
   selectCard: (id) => set({ selectedId: id }),
@@ -185,12 +203,12 @@ export const useBoard = create<BoardState>((set, get) => ({
     if (!text) {
       set({ shakeCapture: true })
       setTimeout(() => set({ shakeCapture: false }), 450)
-      get().showToast('Type something to capture', 'err')
+      get().showToast('Nothing to pin yet', 'err')
       return false
     }
     const boardId = get().activeBoardId
     if (!boardId) {
-      get().showToast('Create a board first', 'err')
+      get().showToast('Make a board first', 'err')
       return false
     }
     const tags = parseTags(text)
@@ -259,7 +277,7 @@ export const useBoard = create<BoardState>((set, get) => ({
 
     set((s) => ({ cards: [...s.cards, card], selectedId: card.id }))
     void get().persist()
-    get().showToast(`${cardKind} pinned`)
+    get().showToast('Pinned.')
     get().triggerSuccess()
     return true
   },
@@ -310,14 +328,14 @@ export const useBoard = create<BoardState>((set, get) => ({
       editingId: s.editingId === id ? null : s.editingId,
     }))
     void get().persist()
-    get().showToast('Card removed')
+    get().showToast('Pin pulled')
   },
 
   setPanZoom: (pan, zoom) => set((s) => ({ pan, zoom: zoom ?? s.zoom })),
 
   exportBackup: () => {
     exportJson(snapshotOf(get()))
-    get().showToast('JSON backup downloaded')
+    get().showToast('Backup saved')
     get().triggerSuccess()
   },
 
@@ -325,12 +343,12 @@ export const useBoard = create<BoardState>((set, get) => ({
     const s = get()
     const board = s.boards.find((b) => b.id === s.activeBoardId)
     if (!board) {
-      get().showToast('No active board', 'err')
+      get().showToast('No wall selected', 'err')
       return
     }
     const cards = s.cards.filter((c) => c.boardId === board.id)
     exportMarkdown(board, cards)
-    get().showToast('Markdown exported')
+    get().showToast('Markdown pulled')
     get().triggerSuccess()
   },
 
@@ -344,10 +362,10 @@ export const useBoard = create<BoardState>((set, get) => ({
         activeBoardId: snap.activeBoardId,
         seeded: snap.seeded,
       })
-      get().showToast('Backup restored')
+      get().showToast('Backup back')
       get().triggerSuccess()
     } catch {
-      get().showToast('Import failed — need Draftwall v1 JSON', 'err')
+      get().showToast('That file isn’t a Draftwall backup', 'err')
     }
   },
 
@@ -367,7 +385,7 @@ export const useBoard = create<BoardState>((set, get) => ({
       pan: { x: 0, y: 0 },
       zoom: 1,
     })
-    get().showToast('Sample board reloaded')
+    get().showToast('Sample wall back')
   },
 
   showToast: (message, tone = 'ok') => {
@@ -383,6 +401,47 @@ export const useBoard = create<BoardState>((set, get) => ({
   triggerSuccess: () => {
     set({ successFlash: true })
     setTimeout(() => set({ successFlash: false }), 900)
+  },
+  applyBriefBoard: (payload) => {
+    const id = nanoid()
+    const t = new Date().toISOString()
+    const board: Board = {
+      id,
+      title: payload.title.trim() || 'Brief board',
+      description: payload.description || '',
+      createdAt: t,
+      updatedAt: t,
+    }
+    const cards: Card[] = payload.cards.map((c) => ({
+      id: nanoid(),
+      boardId: id,
+      kind: c.kind,
+      title: c.title,
+      body: c.body,
+      url: c.url,
+      tags: c.tags.length ? c.tags : ['brief'],
+      x: c.x,
+      y: c.y,
+      w: c.w,
+      h: c.h,
+      color: c.color || '#f3eee4',
+      createdAt: t,
+      updatedAt: t,
+    }))
+    set((s) => ({
+      boards: [...s.boards, board],
+      cards: [...s.cards, ...cards],
+      activeBoardId: id,
+      selectedId: null,
+      editingId: null,
+      pan: { x: 0, y: 0 },
+      zoom: 1,
+      search: '',
+      tagFilter: null,
+    }))
+    void get().persist()
+    get().showToast(payload.mode === 'llm' ? 'AI wall built' : 'Wall sorted offline')
+    get().triggerSuccess()
   },
 }))
 

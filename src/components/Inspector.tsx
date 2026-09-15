@@ -13,7 +13,7 @@ export function Inspector() {
     return (
       <aside className="inspector muted-panel">
         <h2>Inspector</h2>
-        <p className="muted">Select a card to edit title, body, tags, and color.</p>
+        <p className="muted">Click a pin. Title, body, tags, color — all here.</p>
       </aside>
     )
   }
@@ -100,7 +100,7 @@ export function Inspector() {
           if (confirm('Delete this card?')) deleteCard(card.id)
         }}
       >
-        Delete card
+        Pull the pin
       </button>
     </aside>
   )

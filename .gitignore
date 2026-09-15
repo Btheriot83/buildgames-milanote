@@ -5,3 +5,7 @@ playwright-report
 .env
 .DS_Store
 *.local
+
+.env
+.env.local
+.env.*.local

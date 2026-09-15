@@ -39,10 +39,10 @@ export function CaptureBar() {
         data-testid="capture-input"
         placeholder={
           mode === 'link'
-            ? 'Paste a URL — add #tags inline'
+            ? 'Drop a link. #tags stick.'
             : mode === 'image'
-              ? 'Image URL, data URL, or label for a placard #mood'
-              : 'Capture a note — use #tags inline'
+              ? 'Image URL or a short placard label #refs'
+              : 'Write it once. #tag it. Pin it.'
         }
         value={value}
         onChange={(e) => setValue(e.target.value)}

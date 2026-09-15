@@ -7,7 +7,7 @@ type Props = {
   selected: boolean
 }
 
-export function CardTile({ card, selected }: Props) {
+export function CardTile({ card, selected, fresh }: Props & { fresh?: boolean }) {
   const selectCard = useBoard((s) => s.selectCard)
   const setEditing = useBoard((s) => s.setEditing)
   const moveCard = useBoard((s) => s.moveCard)
@@ -34,7 +34,7 @@ export function CardTile({ card, selected }: Props) {
 
   return (
     <article
-      className={`card-tile kind-${card.kind} ${selected ? 'selected' : ''} t-card-tilt`}
+      className={`card-tile kind-${card.kind} ${selected ? 'selected' : ''} ${fresh ? 'pin-in' : ''} t-card-tilt`}
       data-testid={`card-${card.kind}`}
       style={{
         left: card.x,

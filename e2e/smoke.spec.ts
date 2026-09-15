@@ -13,6 +13,9 @@ test('core loop: load sample, capture note, search, export affordances', async (
   await page.getByTestId('search-input').fill('smoke')
   await expect(page.getByText('E2E pinned note').first()).toBeVisible()
 
-  await page.getByRole('button', { name: 'Export JSON' }).click()
+  await page.getByRole('button', { name: /^(Export )?JSON$/ }).click()
   await expect(page.getByText(/JSON backup downloaded|pinned/i).first()).toBeVisible({ timeout: 5000 })
+
+  await page.getByTestId('brief-open').click()
+  await expect(page.getByTestId('brief-input')).toBeVisible()
 })

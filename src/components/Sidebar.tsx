@@ -63,7 +63,7 @@ export function Sidebar() {
         <input
           id="board-search"
           className="field"
-          placeholder="Title, body, tags…"
+          placeholder="Find a pin…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           data-testid="search-input"
@@ -80,7 +80,7 @@ export function Sidebar() {
           )}
         </div>
         <div className="tag-cloud" role="list">
-          {tags.length === 0 && <p className="muted">No tags on this board yet.</p>}
+          {tags.length === 0 && <p className="muted">Tags appear when you #mark a card.</p>}
           {tags.map((tag) => (
             <button
               key={tag}

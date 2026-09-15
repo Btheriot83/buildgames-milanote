@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { useBoard } from '../store/boardStore'
+import { BriefBoard } from './BriefBoard'
 
 export function ShellChrome() {
   const boards = useBoard((s) => s.boards)
@@ -13,10 +14,10 @@ export function ShellChrome() {
   return (
     <header className="shell-chrome">
       <div className="brand">
-        <span className="brand-mark" aria-hidden />
+        <img className="brand-mark-img" src="/assets/brand-mark.png" alt="" width={36} height={36} />
         <div>
           <h1 className="brand-title">Draftwall</h1>
-          <p className="brand-sub">Visual project boards · local IndexedDB</p>
+          <p className="brand-sub">Brief in. Wall out.</p>
         </div>
       </div>
       <div className="chrome-stats" aria-label="Board counts">
@@ -34,18 +35,19 @@ export function ShellChrome() {
           cards
         </span>
       </div>
+      <BriefBoard />
       <div className="chrome-actions">
         <button type="button" className="btn ghost" onClick={() => void resetSample()}>
-          Reload sample
+          Sample
         </button>
         <button type="button" className="btn ghost" onClick={() => fileRef.current?.click()}>
-          Import JSON
+          Import
         </button>
         <button type="button" className="btn ghost" onClick={() => exportBoardMd()}>
-          Export MD
+          MD
         </button>
-        <button type="button" className="btn solid" onClick={() => exportBackup()}>
-          Export JSON
+        <button type="button" className="btn ghost" onClick={() => exportBackup()}>
+          JSON
         </button>
         <input
           ref={fileRef}

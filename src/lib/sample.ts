@@ -16,7 +16,7 @@ export function makeSample(now = new Date()): Snapshot {
       {
         id: boardId,
         title: 'Film lookbook (sample)',
-        description: 'Sample board — delete anytime. Draftwall keeps everything in IndexedDB on this device.',
+        description: 'Starter wall on this device. Wipe anytime — nothing ships to a server.',
         createdAt: stamp(-86_400_000),
         updatedAt: t,
       },

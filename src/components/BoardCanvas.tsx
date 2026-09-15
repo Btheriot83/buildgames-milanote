@@ -20,13 +20,18 @@ export function BoardCanvas() {
     () => cards.filter((c) => c.boardId === activeBoardId && cardMatches(c, search, tagFilter)),
     [cards, activeBoardId, search, tagFilter],
   )
+  const allOnBoard = useMemo(
+    () => cards.filter((c) => c.boardId === activeBoardId),
+    [cards, activeBoardId],
+  )
 
   const space = useRef<{ x: number; y: number; px: number; py: number } | null>(null)
 
   if (!board) {
     return (
       <div className="board-empty">
-        <p>No board selected. Create one from the sidebar.</p>
+        <img src="/assets/empty-cork.png" alt="" className="empty-art" />
+        <p>Pick a board on the left, or open From brief and paste the mess.</p>
       </div>
     )
   }
@@ -64,7 +69,7 @@ export function BoardCanvas() {
       <div className="board-meta">
         <h2>{board.title}</h2>
         {board.description && <p>{board.description}</p>}
-        <p className="board-hint">Drag cards · scroll to pan · ⌘/Ctrl+wheel to zoom · double-click to edit</p>
+        <p className="board-hint">Drag to place · scroll pans · ⌘-wheel zooms · double-click edits</p>
       </div>
       <div
         className="board-surface"
@@ -73,11 +78,17 @@ export function BoardCanvas() {
         }}
       >
         {visible.map((c) => (
-          <CardTile key={c.id} card={c} selected={c.id === selectedId} />
+          <CardTile key={c.id} card={c} selected={c.id === selectedId} fresh={Date.now() - Date.parse(c.createdAt) < 3500} />
         ))}
-        {visible.length === 0 && (
+        {allOnBoard.length === 0 && (
+          <div className="board-empty-state">
+            <img src="/assets/empty-cork.png" alt="" className="empty-art" />
+            <p>Bare cork. Pin something, or hit <strong>From brief</strong> and let the sorter work.</p>
+          </div>
+        )}
+        {allOnBoard.length > 0 && visible.length === 0 && (
           <div className="board-filter-empty">
-            No cards match this search/tag. Clear filters or pin something new.
+            Nothing matches. Clear the search or pin a new card.
           </div>
         )}
       </div>
