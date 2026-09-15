@@ -1,0 +1,160 @@
+/* Phase B4 INTEGRITY — fonts / contrast / buttons / bar gap + dream-loop + transitions.
+   Atelier Pinwall LOCKED. Flat no-gradient. Imported last. */
+
+/* —— r1 fonts —— */
+.board-meta h2 {
+  font-size: clamp(1.72rem, 2.9vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  max-width: 18ch;
+}
+.brand-title { font-size: 1.16rem; letter-spacing: -0.01em; }
+
+/* —— r2 contrast —— */
+.card-body { color: #2c261f; }
+.card-kind { color: #5a544a; }
+.muted { color: #c2cad2; }
+.board-meta p { color: #3a342c; }
+
+/* —— r3 buttons —— */
+.btn.solid, .pin-cta {
+  padding: 0.62rem 1.35rem;
+  box-shadow: 3px 3px 0 #1a1408;
+  font-weight: 700;
+}
+.btn.secondary { border-width: 2px; padding: 0.5rem 1rem; }
+
+/* —— r4 bar gap —— */
+.board-viewport {
+  border-width: 1px;
+  border-color: rgba(26, 20, 8, 0.5);
+  box-shadow: 4px 4px 0 #1a1408;
+  background-color: #f0ebe0;
+}
+.board-viewport::before { opacity: 0.26; background: #faf7f0; }
+
+/* —— r5 fonts —— */
+.capture-verb {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  letter-spacing: -0.02em;
+}
+.tab { font-weight: 600; }
+.search-label { font-family: var(--font-display); letter-spacing: -0.015em; }
+
+/* —— r6 contrast —— */
+.board-item { color: #d5dbe2; }
+.board-item.active .board-name { color: #fff; font-weight: 600; }
+.tag-pill { color: #c8d0d8; border-color: #4a5666; }
+.tag-pill.on { box-shadow: 1px 1px 0 #1a1408; }
+
+/* —— r8 bar gap (dream-loop paper) —— */
+.card-tile {
+  border-radius: 2px;
+  border-color: rgba(20, 17, 12, 0.14);
+  box-shadow: 1px 2px 0 rgba(20, 17, 12, 0.11);
+  background: #fffcf7;
+  padding: 12px 12px 14px;
+}
+.card-tile:hover { box-shadow: 2px 3px 0 rgba(20, 17, 12, 0.16); }
+
+/* —— r9 fonts —— */
+.card-kind {
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+.card-title { font-size: 1.02rem; margin-top: 4px; }
+
+/* —— r10 contrast / dream-loop canvas —— */
+.app-frame { gap: 6px; padding: 10px 12px 14px; }
+.shell-chrome { padding: 8px 12px; }
+.board-viewport { min-height: 600px; background-color: #f3eee4; }
+.board-hint { color: #4a433a !important; font-weight: 500 !important; font-size: 0.78rem !important; }
+.side-label { color: #d0d7df; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.68rem; }
+
+/* —— r11 buttons —— */
+.btn.ghost { color: #9aa6b2; border: 1px solid transparent; }
+.btn.ghost:hover { color: #f3eee4; background: #1c2630; border-color: #3a4654; }
+.pin-cta { font-size: 1rem; min-width: 7.5rem; }
+.column-cta { opacity: 0.7; }
+
+/* —— r12 bar gap / dream-loop title card —— */
+.board-meta {
+  background: #fffcf7;
+  border: 1px solid rgba(20, 17, 12, 0.16);
+  border-radius: 2px;
+  box-shadow: 1px 2px 0 rgba(20, 17, 12, 0.12);
+  padding: 14px 16px 12px;
+  max-width: 28rem;
+  margin: 12px 12px 8px;
+}
+.board-meta h2 { color: #14110c; max-width: none; }
+.board-meta p { color: #3a342c; max-width: none; font-size: 0.8rem; }
+.board-hint { margin-top: 6px; }
+
+/* —— r13 fonts —— */
+.inspector h2, .side-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+.inspector-job { font-size: 0.8rem; line-height: 1.45; }
+.field, .field textarea { font-size: 0.86rem; }
+
+/* —— r14 contrast —— */
+.search-field {
+  background: #0c1218;
+  color: #f3eee4;
+  border-color: #d4ae55;
+}
+.search-field::placeholder { color: #7a8694; }
+.capture-input.field::placeholder { color: #8a949e; }
+
+/* —— r15 buttons —— */
+.btn.secondary:hover {
+  background: rgba(196, 154, 60, 0.18);
+  box-shadow: 2px 2px 0 #1a1408;
+}
+.export-btn.btn.secondary { min-width: 6.5rem; }
+.mode-tabs.t-tabs { position: relative; }
+
+/* —— r16 bar gap / dream-loop —— */
+.board-meta { gap: 4px; }
+.board-meta p { line-height: 1.35; }
+.atelier-tape { font-size: 0.58rem; letter-spacing: 0.1em; padding: 0.28rem 0.7rem; }
+.workspace { gap: 8px; }
+
+/* —— r17 fonts —— */
+.job-label { font-size: 0.78rem; letter-spacing: 0.01em; }
+.job-step.on .job-label { font-weight: 700; color: #f7f2e8; }
+.job-num { font-family: var(--font-mono); }
+
+/* —— r18 contrast / dream-loop —— */
+.card-tile.selected {
+  outline: 2px solid #c49a3c;
+  outline-offset: 2px;
+  box-shadow: 3px 3px 0 rgba(20, 17, 12, 0.28);
+}
+.card-pin { width: 11px; height: 11px; background: #b84a3c; }
+.card-link-chip { font-weight: 600; }
+
+/* —— r19 buttons —— */
+.btn.danger {
+  border-color: #b84a3c;
+  color: #f0c7c4;
+}
+.btn.danger:hover {
+  background: #3a2220;
+  border-color: #d46a60;
+  color: #fff;
+  box-shadow: 2px 2px 0 #1a1408;
+}
+
+/* —— r20 bar gap / dream-loop final —— */
+.board-viewport { background-color: #f4efe6; }
+.board-viewport::before { opacity: 0.2; }
+.sidebar, .inspector { max-width: 100%; }
+.toast-host.t-toast { box-shadow: 3px 3px 0 #1a1408; }

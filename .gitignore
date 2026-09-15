@@ -11,3 +11,6 @@ playwright-report
 .env.*.local
 .vercel
 .env*
+
+.dream-loop/
+gauntlet/shot*.mjs
