@@ -131,3 +131,12 @@
 .job-label { font-size: 0.78rem; letter-spacing: 0.01em; }
 .job-step.on .job-label { font-weight: 700; color: #f7f2e8; }
 .job-num { font-family: var(--font-mono); }
+
+/* —— r18 contrast / dream-loop —— */
+.card-tile.selected {
+  outline: 2px solid #c49a3c;
+  outline-offset: 2px;
+  box-shadow: 3px 3px 0 rgba(20, 17, 12, 0.28);
+}
+.card-pin { width: 11px; height: 11px; background: #b84a3c; }
+.card-link-chip { font-weight: 600; }
