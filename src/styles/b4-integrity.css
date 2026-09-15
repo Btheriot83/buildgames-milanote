@@ -67,3 +67,10 @@
   font-family: var(--font-mono);
 }
 .card-title { font-size: 1.02rem; margin-top: 4px; }
+
+/* —— r10 contrast / dream-loop canvas —— */
+.app-frame { gap: 6px; padding: 10px 12px 14px; }
+.shell-chrome { padding: 8px 12px; }
+.board-viewport { min-height: 600px; background-color: #f3eee4; }
+.board-hint { color: #4a433a !important; font-weight: 500 !important; font-size: 0.78rem !important; }
+.side-label { color: #d0d7df; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.68rem; }
