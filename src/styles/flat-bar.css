@@ -1,0 +1,29 @@
+/* Brandon hard bar (Inkwell → ALL apps): no decorative gradients, glass blur, or glow.
+   Flat materials + real photos only. Imported last so it wins. */
+
+:root {
+  --check-blur-from: 0px;
+  --toast-blur: 0px;
+  --digit-blur: 0px;
+  --reveal-blur: 0px;
+  --stagger-blur: 0px;
+  --panel-blur: 0px;
+  --shadow: 6px 6px 0 #1a1408;
+}
+
+.t-shimmer,
+.t-shimmer::before {
+  animation: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+.t-success-check,
+.toast-host,
+.t-number-pop,
+.t-texts-reveal[data-state],
+.t-panel-reveal[data-state],
+.loading-shell {
+  filter: none !important;
+}

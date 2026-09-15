@@ -2,7 +2,7 @@
   "slug": "milanote",
   "product": "Draftwall",
   "phase": "B2",
-  "status": "gauntlet_r2_complete",
+  "status": "gauntlet_r2_complete_flat_bar",
   "identity": "Atelier Pinwall",
   "identityFrozen": true,
   "reseeded": false,
@@ -42,7 +42,8 @@
     "starterWall": "Desert Diner \u00b7 Lookbook",
     "contentVersion": 2,
     "finalCriticScore": 7.9,
-    "baselineScore": 6.9
+    "baselineScore": 6.9,
+    "flatBarApplied": true
   },
   "visibilityGate": {
     "ok": true,
@@ -59,8 +60,17 @@
     ]
   },
   "antiSlopCleared": true,
-  "finishedAtUtc": "2026-09-15T04:17:34Z",
-  "finishedAtPt": "2026-09-14 9:17 PM PT",
-  "notes": "Phase B2 ten rounds under locked Atelier Pinwall. No reseed. Do not message Brandon.",
-  "doNotMessageBrandon": true
+  "finishedAtUtc": "2026-09-15T04:22:09Z",
+  "finishedAtPt": "2026-09-14 9:22 PM PT",
+  "notes": "Phase B2 ten rounds + Brandon flat-bar (no gradients/glass/glow). Atelier Pinwall locked. Do not message Brandon.",
+  "doNotMessageBrandon": true,
+  "brandonFlatBar": {
+    "applied": true,
+    "gradientsStripped": true,
+    "glassBlurKilled": true,
+    "glowKilled": true,
+    "materials": "flat ink/chalk + cork photo",
+    "identityStill": "Atelier Pinwall",
+    "reseeded": false
+  }
 }
