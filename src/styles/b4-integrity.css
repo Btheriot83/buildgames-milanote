@@ -94,3 +94,12 @@
 .board-meta h2 { color: #14110c; max-width: none; }
 .board-meta p { color: #3a342c; max-width: none; font-size: 0.8rem; }
 .board-hint { margin-top: 6px; }
+
+/* —— r13 fonts —— */
+.inspector h2, .side-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+.inspector-job { font-size: 0.8rem; line-height: 1.45; }
+.field, .field textarea { font-size: 0.86rem; }
