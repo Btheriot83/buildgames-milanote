@@ -81,7 +81,7 @@
   "notes": "Phase B3 twenty rounds \u2014 fonts/contrast/buttons + close A/B vs milanote.com under locked Atelier Pinwall. Flat no-gradient held. Live redeployed. Do not message Brandon.",
   "finishedAtUtc": "2026-09-15T04:40:36Z",
   "finishedAtPt": "2026-09-14 9:40 PM PT",
-  "mainSha": "55d4f2d",
+  "mainSha": "4529702",
   "live_http": 200,
   "live_smoke": {
     "ok": true,
