@@ -10,3 +10,9 @@
   max-width: 18ch;
 }
 .brand-title { font-size: 1.16rem; letter-spacing: -0.01em; }
+
+/* —— r2 contrast —— */
+.card-body { color: #2c261f; }
+.card-kind { color: #5a544a; }
+.muted { color: #c2cad2; }
+.board-meta p { color: #3a342c; }
