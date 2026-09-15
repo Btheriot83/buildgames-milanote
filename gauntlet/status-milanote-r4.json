@@ -2,7 +2,7 @@
   "slug": "milanote",
   "product": "Draftwall",
   "phase": "B4",
-  "status": "gauntlet_r4_integrity_complete",
+  "status": "gauntlet_r4_integrity_complete_live",
   "identity": "Atelier Pinwall",
   "identityFrozen": true,
   "reseeded": false,
@@ -76,8 +76,8 @@
   ],
   "workbench": "apps/milanote/gauntlet/workbench-r4.md",
   "doNotMessageBrandon": true,
-  "finishedAtUtc": "2026-09-15T05:16:34Z",
-  "finishedAtPt": "2026-09-14 10:16 PM PT",
+  "finishedAtUtc": "2026-09-15T05:17:31Z",
+  "finishedAtPt": "2026-09-14 10:17 PM PT",
   "pr": [
     "https://github.com/Btheriot83/buildgames-milanote/pull/5"
   ],
@@ -87,5 +87,6 @@
     "alias": "https://buildgames-milanote.vercel.app"
   },
   "live_http": 200,
-  "mainSha": "5869057"
+  "mainSha": "5869057",
+  "merged": true
 }
