@@ -48,3 +48,13 @@
 .board-item.active .board-name { color: #fff; font-weight: 600; }
 .tag-pill { color: #c8d0d8; border-color: #4a5666; }
 .tag-pill.on { box-shadow: 1px 1px 0 #1a1408; }
+
+/* —— r8 bar gap (dream-loop paper) —— */
+.card-tile {
+  border-radius: 2px;
+  border-color: rgba(20, 17, 12, 0.14);
+  box-shadow: 1px 2px 0 rgba(20, 17, 12, 0.11);
+  background: #fffcf7;
+  padding: 12px 12px 14px;
+}
+.card-tile:hover { box-shadow: 2px 3px 0 rgba(20, 17, 12, 0.16); }
