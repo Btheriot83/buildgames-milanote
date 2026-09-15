@@ -16,3 +16,11 @@
 .card-kind { color: #5a544a; }
 .muted { color: #c2cad2; }
 .board-meta p { color: #3a342c; }
+
+/* —— r3 buttons —— */
+.btn.solid, .pin-cta {
+  padding: 0.62rem 1.35rem;
+  box-shadow: 3px 3px 0 #1a1408;
+  font-weight: 700;
+}
+.btn.secondary { border-width: 2px; padding: 0.5rem 1rem; }
