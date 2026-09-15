@@ -49,7 +49,8 @@
     "ok": true,
     "proof": [
       "gauntlet/screenshots/r2/r0-baseline-live.png",
-      "gauntlet/screenshots/r2/r10-final.png"
+      "gauntlet/screenshots/r2/r10-final.png",
+      "gauntlet/screenshots/r2/r10-flat-chrome.png"
     ],
     "bullets": [
       "job rail pin\u2192search\u2192export",
@@ -73,7 +74,7 @@
     "identityStill": "Atelier Pinwall",
     "reseeded": false
   },
-  "mainSha": "25192f5",
+  "mainSha": "ad4a63a",
   "live_http": 200,
   "live_smoke": {
     "ok": true,
