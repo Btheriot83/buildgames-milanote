@@ -61,7 +61,7 @@ export function CaptureBar() {
       <button type="button" className="btn solid pin-cta" data-testid="capture-submit" onClick={submit}>
         Pin to wall
       </button>
-      <button type="button" className="btn ghost" onClick={() => addColumn()}>
+      <button type="button" className="btn ghost tiny column-cta" onClick={() => addColumn()}>
         Column
       </button>
     </div>

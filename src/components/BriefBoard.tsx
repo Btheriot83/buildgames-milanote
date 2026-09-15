@@ -54,7 +54,7 @@ export function BriefBoard() {
     <div className="brief-wrap">
       <button
         type="button"
-        className="btn solid brief-open"
+        className="btn secondary brief-open"
         data-testid="brief-open"
         onClick={() => setOpen((o) => !o)}
       >

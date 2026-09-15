@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import './styles/transitions.css'
 import './styles/flat-bar.css'
+import './styles/b3-craft.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

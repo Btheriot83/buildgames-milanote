@@ -45,3 +45,12 @@ Docs / status JSON without stage change; contentVersion migration alone.
 3. Hard offsets — ochre/ink box-shadow offsets replace soft bloom/glow.
 4. Flat clay pins — solid clay circles, no radial highlight.
 5. Motion blur off — transition blur vars zeroed; shimmer gradient disabled.
+
+## Phase B3 visible deltas (2026-09-14 ~9:38 PM PT)
+Proof: `screenshots/r3/r0-baseline-demo.png` → `screenshots/r3/r20-final.png` (bar: `r0-bar-milanote-home.png`)
+
+1. **Button hierarchy** — Pin to wall sole solid primary; From brief + Export MD/JSON ochre secondary outlines; Reset/Import/Column ghost tertiary.
+2. **Type scale** — Brand ~1.28rem; board title remains stage hero; card title/body hierarchy (Newsreader / Plex Sans).
+3. **Contrast** — Stronger muted/paper-dim; card ink `#14110c`; link chips olive-bold; search field ochre edge.
+4. **Chrome wash killed** — Dark quiet tape; ink offsets on shell/job-rail (ochre reserved for CTAs/pins/numbers).
+5. **Board craft** — Lighter chalk wash, paper cards, column top strips — closer to Milanote note/column feel under locked Atelier Pinwall + flat bar.

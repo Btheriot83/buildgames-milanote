@@ -2,9 +2,9 @@ import { nanoid } from 'nanoid'
 import type { Snapshot } from './types'
 
 /** Bump when starter wall content must replace old SAMPLE / meta walls on boot. */
-export const CONTENT_VERSION = 2
+export const CONTENT_VERSION = 3
 
-const COLORS = ['#f3eee4', '#e8e0d2', '#dfe8e2', '#f0e6d8', '#e6ebe8', '#efe6d6'] as const
+const COLORS = ['#faf7f0', '#f3eee4', '#eef5f0', '#f7efe4', '#f0f3ee', '#f5eadc'] as const
 
 export function makeSample(now = new Date()): Snapshot {
   const boardId = nanoid()

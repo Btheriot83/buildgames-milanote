@@ -43,10 +43,10 @@ export function ShellChrome() {
         <button type="button" className="btn ghost" onClick={() => fileRef.current?.click()}>
           Import
         </button>
-        <button type="button" className="btn ghost export-btn" data-testid="export-md" onClick={() => exportBoardMd()}>
+        <button type="button" className="btn secondary export-btn" data-testid="export-md" onClick={() => exportBoardMd()}>
           Export MD
         </button>
-        <button type="button" className="btn ghost export-btn" data-testid="export-json" onClick={() => exportBackup()}>
+        <button type="button" className="btn secondary export-btn" data-testid="export-json" onClick={() => exportBackup()}>
           Export JSON
         </button>
         <input

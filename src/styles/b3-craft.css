@@ -1,0 +1,456 @@
+/* Phase B3 — fonts, contrast, buttons, Milanote-closer board craft.
+   Atelier Pinwall LOCKED. Flat no-gradient. Imported last. */
+
+:root {
+  /* Contrast that holds (was washed #9aa3ad / soft paper-dim) */
+  --muted: #b4bcc6;
+  --paper-dim: #c8d0d8;
+  --ink-card: #14110c;
+  --ink-card-soft: #3a342c;
+  --ink-card-faint: #6a6358;
+  --paper-card: #faf7f0;
+  --paper-card-edge: rgba(20, 17, 12, 0.22);
+  --ochre-hot: #d4ae55;
+  --ochre-ink: #1a1408;
+  --line-strong: #3a4654;
+
+  /* Type scale — readable hierarchy, no AI font gimmick */
+  --fs-brand: 1.28rem;
+  --fs-board: clamp(1.55rem, 2.6vw, 2rem);
+  --fs-card-title: 0.98rem;
+  --fs-card-body: 0.84rem;
+  --fs-ui: 0.875rem;
+  --fs-label: 0.75rem;
+  --lh-tight: 1.15;
+  --lh-body: 1.45;
+}
+
+/* —— R1 type: brand demoted so board title wins —— */
+.brand-title {
+  font-size: var(--fs-brand);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: var(--lh-tight);
+  color: var(--paper);
+}
+.brand-sub {
+  color: var(--paper-dim);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+/* —— R2 muted/chrome contrast —— */
+.chrome-stats { color: var(--paper-dim); font-size: var(--fs-ui); }
+.muted { color: var(--muted); }
+.side-label { color: var(--paper-dim); font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.01em; }
+.tab { color: var(--muted); font-weight: 500; }
+.tab.on { color: var(--ochre-ink); font-weight: 600; }
+
+/* —— R3 card type hierarchy (Milanote: quiet kind, clear title, readable body) —— */
+.card-kind {
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-card-faint);
+  font-weight: 500;
+}
+.card-title {
+  font-size: var(--fs-card-title);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--ink-card);
+  margin: 2px 0 6px;
+}
+.card-body {
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-body);
+  color: var(--ink-card-soft);
+  font-family: var(--font-sans);
+}
+.card-tags li {
+  background: rgba(20, 17, 12, 0.08);
+  color: var(--ink-card-soft);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* —— R4–R6 button system: one primary, secondary outline, ghost tertiary —— */
+.btn {
+  border-radius: 8px;
+  padding: 0.48rem 0.9rem;
+  font-size: var(--fs-ui);
+  font-weight: 500;
+  background: var(--ink-3);
+  border-color: var(--line-strong);
+  color: var(--paper);
+}
+.btn:hover {
+  background: #2a3644;
+  border-color: #4a5a6c;
+  color: #fff;
+}
+.btn.solid {
+  background: var(--ochre);
+  color: var(--ochre-ink);
+  border-color: #9a7428;
+  font-weight: 700;
+  box-shadow: 2px 2px 0 var(--ochre-ink);
+}
+.btn.solid:hover {
+  background: var(--ochre-hot);
+  color: var(--ochre-ink);
+}
+.btn.secondary {
+  background: transparent;
+  color: var(--ochre-hot);
+  border: 1.5px solid var(--ochre);
+  font-weight: 600;
+}
+.btn.secondary:hover {
+  background: rgba(196, 154, 60, 0.12);
+  color: var(--ochre-hot);
+  border-color: var(--ochre-hot);
+}
+.btn.ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+  font-weight: 500;
+}
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--line);
+  color: var(--paper);
+}
+.btn.tiny {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+.btn.danger {
+  background: transparent;
+  border: 1.5px solid #6a3532;
+  color: #e8b4b0;
+  font-weight: 600;
+}
+.btn.danger:hover { background: #3a2220; color: #f0c7c4; }
+.pin-cta {
+  padding: 0.58rem 1.2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+.export-btn { /* secondary treatment applied via class in markup */ }
+
+/* —— R7 mode tabs: solid glider, readable active (not washed 0.35) —— */
+.tab-glider {
+  background: var(--ochre);
+  border: 1px solid var(--ochre-ink);
+  opacity: 1;
+  box-shadow: 1px 1px 0 var(--ochre-ink);
+}
+.mode-tabs {
+  background: #0e1419;
+  border-color: var(--line-strong);
+}
+
+/* —— R8 board surface craft: less muddy chalk, more Milanote light canvas —— */
+.board-viewport {
+  border: 2px solid #1a1408;
+  box-shadow: 6px 6px 0 #1a1408;
+  background-color: #ebe4d6;
+}
+.board-viewport::before {
+  background: #f7f2e8;
+  opacity: 0.42;
+}
+.board-meta h2 {
+  font-size: var(--fs-board);
+  color: var(--ink-card);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  line-height: 1.08;
+}
+.board-meta p {
+  color: var(--ink-card-soft);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  max-width: 42ch;
+}
+.board-hint {
+  color: var(--ink-card-faint) !important;
+  opacity: 1 !important;
+  font-size: 0.72rem !important;
+}
+
+/* —— R9 card paper craft (flat, Milanote-like white notes) —— */
+.card-tile {
+  background: var(--paper-card);
+  border: 1px solid var(--paper-card-edge);
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 rgba(20, 17, 12, 0.14);
+  padding: 14px 14px 16px;
+  color: var(--ink-card);
+}
+.card-tile:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 rgba(20, 17, 12, 0.2);
+}
+.card-tile.selected {
+  outline: 2px solid var(--ochre);
+  outline-offset: 1px;
+  box-shadow: 3px 3px 0 rgba(20, 17, 12, 0.22);
+}
+.card-pin {
+  width: 12px;
+  height: 12px;
+  top: 8px;
+  right: 10px;
+  background: var(--clay);
+  border: 1.5px solid #5a1e16;
+  box-shadow: 1px 1px 0 #1a1408;
+}
+
+/* —— R10 column headers: Milanote-style top strip, not full ochre slab —— */
+.card-tile.kind-column {
+  padding-top: 18px;
+  border-top: 4px solid var(--ochre-ink);
+  font-family: var(--font-display);
+  background: var(--ochre) !important;
+  color: var(--ochre-ink);
+  box-shadow: 2px 2px 0 var(--ochre-ink);
+}
+.card-tile.kind-column .card-kind { color: rgba(26, 20, 8, 0.55); }
+.card-tile.kind-column .card-title {
+  color: var(--ochre-ink);
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+.card-tile.kind-column .card-pin {
+  background: var(--ochre-ink);
+  border-color: #0e0a04;
+}
+
+/* —— R11 capture hierarchy —— */
+.capture-bar-hero {
+  border: 1.5px solid #1a1408;
+  box-shadow: 3px 3px 0 #1a1408;
+  background: #151c24;
+}
+.capture-verb {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ochre-hot);
+}
+.capture-hint { color: var(--muted); font-size: 0.66rem; }
+.capture-input.field {
+  background: #0e1419;
+  border-color: var(--line-strong);
+  color: var(--paper);
+  font-size: var(--fs-ui);
+}
+.capture-input.field::placeholder { color: #7a8490; }
+.capture-input.field:focus {
+  border-color: var(--ochre);
+  outline: 2px solid rgba(196, 154, 60, 0.4);
+}
+
+/* —— R12 sidebar / search contrast —— */
+.sidebar, .inspector, .shell-chrome {
+  border: 1.5px solid #1a1408;
+  box-shadow: 3px 3px 0 #1a1408;
+  background: #151c24;
+}
+.search-label {
+  font-size: 1rem !important;
+  color: var(--paper) !important;
+}
+.search-field {
+  border-color: var(--ochre);
+  border-width: 1.5px;
+  color: var(--paper);
+}
+.board-item {
+  border-color: var(--line-strong);
+  font-size: var(--fs-ui);
+}
+.board-item.active {
+  border-color: var(--ochre);
+  background: #1c2630;
+  box-shadow: inset 3px 0 0 var(--ochre);
+}
+.board-name { color: var(--paper); font-weight: 500; }
+.board-count {
+  background: var(--ochre);
+  color: var(--ochre-ink);
+  font-weight: 700;
+}
+.tag-pill {
+  border-color: var(--line-strong);
+  color: var(--paper-dim);
+}
+.tag-pill.on {
+  background: var(--olive);
+  border-color: #2a5233;
+  color: #f3eee4;
+  font-weight: 600;
+}
+
+/* —— R13 shell / job rail: less ochre wash, ink offset —— */
+.shell-chrome { box-shadow: 4px 4px 0 #1a1408; }
+.job-rail ol {
+  background: #121820;
+  border: 1.5px solid #1a1408;
+  box-shadow: 2px 2px 0 #1a1408;
+  padding: 0.45rem 0.9rem;
+}
+.job-step { font-size: 0.8rem; color: var(--muted); }
+.job-step.on .job-label { color: var(--paper); font-weight: 600; }
+.job-num {
+  background: var(--ochre);
+  color: var(--ochre-ink);
+  font-weight: 700;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.65rem;
+}
+.job-arrow { color: var(--ochre-hot); opacity: 1; }
+
+/* —— R14 atelier tape: quieter (was shouting mono uppercase) —— */
+.atelier-tape {
+  background: #1a222c;
+  color: var(--paper-dim);
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 0.32rem 0.75rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  gap: 1.1rem;
+}
+.atelier-tape span:first-child {
+  color: var(--ochre-hot);
+  font-weight: 700;
+}
+.atelier-tape span:nth-child(even) { color: var(--muted); }
+
+/* —— R15 brand mark flat —— */
+.brand-mark-img {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #1a1408;
+  box-shadow: 2px 2px 0 #1a1408;
+}
+
+/* —— R16 link chip contrast —— */
+.card-link-chip {
+  background: #e8f0ea;
+  border: 1.5px solid var(--olive);
+  color: #244a2c;
+  font-weight: 600;
+  font-size: 0.76rem;
+}
+.card-link-chip:hover { background: #d5e4d9; }
+.link-mark { background: var(--olive); }
+
+/* —— R17 match chip / fields —— */
+.board-match-count {
+  background: var(--ink-card);
+  color: var(--paper-card) !important;
+  border: 1px solid #1a1408;
+  font-weight: 600;
+}
+.field {
+  background: #0e1419;
+  border-color: var(--line-strong);
+  color: var(--paper);
+  font-size: var(--fs-ui);
+}
+.field:focus {
+  outline: 2px solid rgba(196, 154, 60, 0.5);
+  border-color: var(--ochre);
+}
+
+/* —— R18 chrome density: tighter so board breathes (Milanote craft) —— */
+.app-frame { gap: 8px; padding: 12px 14px 16px; }
+.shell-chrome { padding: 10px 14px; gap: 14px; }
+.board-viewport { min-height: 560px; }
+.side-head h2, .inspector h2 {
+  font-size: 0.98rem;
+  color: var(--paper);
+}
+.inspector-job { color: var(--muted); }
+.inspector-job li::marker { color: var(--ochre-hot); }
+
+/* —— R19 flat audit: kill any residual glow / soft wash —— */
+.card-tile,
+.btn.solid,
+.shell-chrome,
+.capture-bar-hero,
+.job-rail ol,
+.sidebar,
+.inspector {
+  filter: none;
+}
+.t-card-tilt:hover {
+  transform: translateY(-1px);
+  /* no perspective sheen — flat */
+}
+
+/* —— R20 brief panel buttons inherit hierarchy —— */
+.brief-panel {
+  border: 1.5px solid #1a1408;
+  box-shadow: 6px 6px 0 #1a1408;
+}
+.brief-head h2 { color: var(--paper); }
+.brief-lede { color: var(--paper-dim); }
+
+@media (max-width: 980px) {
+  .board-viewport { min-height: 420px; }
+  .brand-title { font-size: 1.15rem; }
+}
+
+/* —— B3 polish pass: capture tabs must not inflate —— */
+.mode-tabs {
+  flex: 0 0 auto;
+  width: 210px;
+  min-width: 210px;
+  max-width: 210px;
+}
+.capture-bar-hero {
+  grid-template-columns: auto 210px minmax(0, 1fr) auto auto;
+  align-items: center;
+}
+.capture-job-label {
+  gap: 0;
+  line-height: 1.05;
+  min-width: 3.6rem;
+}
+.capture-verb {
+  font-size: 0.98rem;
+}
+.tab {
+  font-size: 0.8rem;
+  padding: 0.38rem 0.4rem;
+}
+.tab:not(.on) {
+  color: var(--paper-dim);
+}
+.column-cta {
+  opacity: 0.85;
+}
+
+/* Board cards: body uses sans for Milanote-like note craft */
+.card-tile .card-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+.card-tile .card-title {
+  font-family: var(--font-display);
+}
+
+/* Stats ochre number contrast */
+.t-number-pop {
+  color: var(--ochre-hot);
+  font-weight: 700;
+}
