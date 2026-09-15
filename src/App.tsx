@@ -27,6 +27,12 @@ export default function App() {
       <LoadingShell revealed={!booting} />
       {ready && (
         <div className="app-frame t-texts-reveal" data-state="in">
+          <div className="atelier-tape" aria-hidden>
+            <span>Atelier Pinwall</span>
+            <span>Cork + kraft</span>
+            <span>Brief in · Wall out</span>
+            <span>Ochre pins</span>
+          </div>
           <ShellChrome />
           <div className="workspace">
             <Sidebar />

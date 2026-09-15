@@ -14,7 +14,7 @@ export function ShellChrome() {
   return (
     <header className="shell-chrome">
       <div className="brand">
-        <img className="brand-mark-img" src="/assets/brand-mark.png" alt="" width={36} height={36} />
+        <img className="brand-mark-img" src="/assets/brand-mark.png" alt="" width={52} height={52} />
         <div>
           <h1 className="brand-title">Draftwall</h1>
           <p className="brand-sub">Brief in. Wall out.</p>
