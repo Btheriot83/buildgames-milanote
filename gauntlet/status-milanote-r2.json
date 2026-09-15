@@ -1,0 +1,66 @@
+{
+  "slug": "milanote",
+  "product": "Draftwall",
+  "phase": "B2",
+  "status": "gauntlet_r2_complete",
+  "identity": "Atelier Pinwall",
+  "identityFrozen": true,
+  "reseeded": false,
+  "demoUrl": "https://buildgames-milanote.vercel.app",
+  "barUrl": "https://milanote.com/",
+  "path": "/workspace/build-games/apps/milanote",
+  "job": "Pin notes/links on a visual board \u2192 search \u2192 export (\u22643s)",
+  "phaseA": {
+    "done": true,
+    "techniquesDone": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "identityPath": "docs/IDENTITY.md"
+  },
+  "phaseB": {
+    "roundsCompleted": 5,
+    "roundsTarget": 5,
+    "workbench": "gauntlet/workbench.md"
+  },
+  "phaseB2": {
+    "roundsCompleted": 10,
+    "roundsTarget": 10,
+    "workbench": "gauntlet/workbench-r2.md",
+    "focus": [
+      "fix_mistakes",
+      "job_clarity",
+      "real_board_content",
+      "visibility"
+    ],
+    "starterWall": "Desert Diner \u00b7 Lookbook",
+    "contentVersion": 2,
+    "finalCriticScore": 7.9,
+    "baselineScore": 6.9
+  },
+  "visibilityGate": {
+    "ok": true,
+    "proof": [
+      "gauntlet/screenshots/r2/r0-baseline-live.png",
+      "gauntlet/screenshots/r2/r10-final.png"
+    ],
+    "bullets": [
+      "job rail pin\u2192search\u2192export",
+      "Desert Diner title (no SAMPLE)",
+      "Export MD/JSON + Reset wall",
+      "Pin to wall capture CTA",
+      "Search the wall first in sidebar"
+    ]
+  },
+  "antiSlopCleared": true,
+  "finishedAtUtc": "2026-09-15T04:17:34Z",
+  "finishedAtPt": "2026-09-14 9:17 PM PT",
+  "notes": "Phase B2 ten rounds under locked Atelier Pinwall. No reseed. Do not message Brandon.",
+  "doNotMessageBrandon": true
+}

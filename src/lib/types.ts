@@ -28,6 +28,8 @@ export type Board = {
 
 export type Snapshot = {
   version: 1
+  /** Starter-wall content generation; bump in sample.ts to refresh old SAMPLE boards. */
+  contentVersion?: number
   boards: Board[]
   cards: Card[]
   activeBoardId: string | null

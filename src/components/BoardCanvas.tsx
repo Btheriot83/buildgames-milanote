@@ -16,14 +16,15 @@ export function BoardCanvas() {
   const selectCard = useBoard((s) => s.selectCard)
 
   const board = boards.find((b) => b.id === activeBoardId)
-  const visible = useMemo(
-    () => cards.filter((c) => c.boardId === activeBoardId && cardMatches(c, search, tagFilter)),
-    [cards, activeBoardId, search, tagFilter],
-  )
   const allOnBoard = useMemo(
     () => cards.filter((c) => c.boardId === activeBoardId),
     [cards, activeBoardId],
   )
+  const visible = useMemo(
+    () => allOnBoard.filter((c) => cardMatches(c, search, tagFilter)),
+    [allOnBoard, search, tagFilter],
+  )
+  const filtering = Boolean(search.trim() || tagFilter)
 
   const space = useRef<{ x: number; y: number; px: number; py: number } | null>(null)
 
@@ -70,6 +71,13 @@ export function BoardCanvas() {
         <h2>{board.title}</h2>
         {board.description && <p>{board.description}</p>}
         <p className="board-hint">Drag to place · scroll pans · ⌘-wheel zooms · double-click edits</p>
+        {filtering && (
+          <p className="board-match-count" data-testid="match-count">
+            Showing {visible.length} of {allOnBoard.length} pins
+            {tagFilter ? ` · #${tagFilter}` : ''}
+            {search.trim() ? ` · “${search.trim()}”` : ''}
+          </p>
+        )}
       </div>
       <div
         className="board-surface"
@@ -83,7 +91,9 @@ export function BoardCanvas() {
         {allOnBoard.length === 0 && (
           <div className="board-empty-state">
             <img src="/assets/empty-cork.png" alt="" className="empty-art" />
-            <p>Bare cork. Pin something, or hit <strong>From brief</strong> and let the sorter work.</p>
+            <p>
+              Bare cork. <strong>Pin</strong> a note or link above, search from the left, then <strong>Export</strong>.
+            </p>
           </div>
         )}
         {allOnBoard.length > 0 && visible.length === 0 && (

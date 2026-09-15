@@ -597,3 +597,132 @@ button, input, select, textarea {
   border: 1px solid rgba(26, 20, 12, 0.18);
 }
 .wall-texture { opacity: 0.55; }
+
+/* —— Phase B2 / R2 — job clarity + board craft (Atelier Pinwall locked, no reseed) —— */
+.job-rail {
+  display: flex;
+  justify-content: center;
+  padding: 0 4px;
+}
+.job-rail ol {
+  list-style: none;
+  margin: 0;
+  padding: 0.55rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem 0.75rem;
+  background: #1a222c;
+  border: 2px solid #1a1408;
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 rgba(196,154,60,0.4);
+}
+.job-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--paper-dim);
+  font-weight: 500;
+}
+.job-step.on .job-label { color: var(--paper); font-weight: 600; }
+.job-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35rem; height: 1.35rem;
+  border-radius: 50%;
+  background: var(--ochre);
+  color: #1a1408;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.job-arrow { color: var(--ochre); font-weight: 700; opacity: 0.85; }
+
+.capture-bar-hero {
+  grid-template-columns: auto auto 1fr auto auto;
+  border: 2px solid #1a1408;
+  box-shadow: 5px 5px 0 rgba(196,154,60,0.35);
+  padding: 12px;
+}
+.capture-job-label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  padding: 0 4px 0 2px;
+  min-width: 4.5rem;
+}
+.capture-verb {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ochre);
+}
+.capture-hint { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.02em; }
+.pin-cta { padding: 0.55rem 1.15rem; font-size: 0.95rem; }
+
+.search-block { padding-top: 0 !important; border-top: 0 !important; margin-top: 0 !important; }
+.search-label {
+  font-family: var(--font-display);
+  font-size: 1.05rem !important;
+  color: var(--paper) !important;
+  font-weight: 600;
+  margin-top: 0 !important;
+}
+.search-field {
+  border-color: rgba(196,154,60,0.45);
+  background: #0e1419;
+}
+.clear-search { margin-top: 6px; }
+
+.board-match-count {
+  margin-top: 8px !important;
+  display: inline-block;
+  background: rgba(26,20,12,0.88);
+  color: #f3eee4 !important;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.75rem !important;
+  font-family: var(--font-mono);
+  pointer-events: auto;
+}
+
+.card-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 4px 0 8px;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(59,114,70,0.18);
+  border: 1px solid rgba(59,114,70,0.45);
+  color: var(--olive-dim);
+  font-size: 0.78rem;
+  text-decoration: none;
+  max-width: 100%;
+}
+.card-link-chip:hover { background: rgba(59,114,70,0.28); }
+.link-mark {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--olive);
+  flex-shrink: 0;
+}
+.link-host { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.export-btn { border-color: rgba(196,154,60,0.35); }
+.export-btn:hover { border-color: var(--ochre); color: var(--ochre); }
+
+.inspector-job {
+  margin: 12px 0 0;
+  padding-left: 1.1rem;
+  color: var(--paper-dim);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.inspector-job li::marker { color: var(--ochre); }
+
+@media (max-width: 980px) {
+  .capture-bar-hero { grid-template-columns: 1fr; }
+  .capture-job-label { flex-direction: row; align-items: baseline; gap: 0.4rem; }
+}
