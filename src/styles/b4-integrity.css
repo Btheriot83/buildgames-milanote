@@ -140,3 +140,15 @@
 }
 .card-pin { width: 11px; height: 11px; background: #b84a3c; }
 .card-link-chip { font-weight: 600; }
+
+/* —— r19 buttons —— */
+.btn.danger {
+  border-color: #b84a3c;
+  color: #f0c7c4;
+}
+.btn.danger:hover {
+  background: #3a2220;
+  border-color: #d46a60;
+  color: #fff;
+  box-shadow: 2px 2px 0 #1a1408;
+}
