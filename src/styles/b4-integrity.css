@@ -80,3 +80,17 @@
 .btn.ghost:hover { color: #f3eee4; background: #1c2630; border-color: #3a4654; }
 .pin-cta { font-size: 1rem; min-width: 7.5rem; }
 .column-cta { opacity: 0.7; }
+
+/* —— r12 bar gap / dream-loop title card —— */
+.board-meta {
+  background: #fffcf7;
+  border: 1px solid rgba(20, 17, 12, 0.16);
+  border-radius: 2px;
+  box-shadow: 1px 2px 0 rgba(20, 17, 12, 0.12);
+  padding: 14px 16px 12px;
+  max-width: 28rem;
+  margin: 12px 12px 8px;
+}
+.board-meta h2 { color: #14110c; max-width: none; }
+.board-meta p { color: #3a342c; max-width: none; font-size: 0.8rem; }
+.board-hint { margin-top: 6px; }
