@@ -20,18 +20,20 @@ export function CaptureBar() {
   }
 
   return (
-    <div className={`capture-bar capture-bar-hero ${shake ? 't-error-shake' : ''}`} data-state={shake ? 'in' : undefined}>
+    <div className="capture-bar capture-bar-hero">
       <div className="capture-job-label">
         <span className="capture-verb">Pin</span>
         <span className="capture-hint">onto the wall</span>
       </div>
-      <div className="mode-tabs t-tabs-sliding" data-active={mode}>
-        <span className="tab-glider" aria-hidden />
+      <div className="mode-tabs t-tabs" data-active={mode} role="tablist" aria-label="Pin kind">
+        <span className="tab-glider t-tabs-pill" aria-hidden />
         {MODES.map((m) => (
           <button
             key={m.id}
             type="button"
-            className={`tab ${mode === m.id ? 'on' : ''}`}
+            role="tab"
+            aria-selected={mode === m.id}
+            className={`tab t-tab ${mode === m.id ? 'on' : ''}`}
             onClick={() => setMode(m.id)}
           >
             {m.label}
@@ -39,7 +41,7 @@ export function CaptureBar() {
         ))}
       </div>
       <input
-        className="capture-input field"
+        className={`capture-input field t-input${shake ? ' is-error is-shaking' : ''}`}
         data-testid="capture-input"
         placeholder={
           mode === 'link'
