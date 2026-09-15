@@ -24,3 +24,12 @@
   font-weight: 700;
 }
 .btn.secondary { border-width: 2px; padding: 0.5rem 1rem; }
+
+/* —— r4 bar gap —— */
+.board-viewport {
+  border-width: 1px;
+  border-color: rgba(26, 20, 8, 0.5);
+  box-shadow: 4px 4px 0 #1a1408;
+  background-color: #f0ebe0;
+}
+.board-viewport::before { opacity: 0.26; background: #faf7f0; }
