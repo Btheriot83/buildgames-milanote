@@ -1,0 +1,12 @@
+/* Phase B4 INTEGRITY — fonts / contrast / buttons / bar gap + dream-loop + transitions.
+   Atelier Pinwall LOCKED. Flat no-gradient. Imported last. */
+
+/* —— r1 fonts —— */
+.board-meta h2 {
+  font-size: clamp(1.72rem, 2.9vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  max-width: 18ch;
+}
+.brand-title { font-size: 1.16rem; letter-spacing: -0.01em; }
