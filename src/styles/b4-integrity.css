@@ -112,3 +112,11 @@
 }
 .search-field::placeholder { color: #7a8694; }
 .capture-input.field::placeholder { color: #8a949e; }
+
+/* —— r15 buttons —— */
+.btn.secondary:hover {
+  background: rgba(196, 154, 60, 0.18);
+  box-shadow: 2px 2px 0 #1a1408;
+}
+.export-btn.btn.secondary { min-width: 6.5rem; }
+.mode-tabs.t-tabs { position: relative; }
