@@ -18,6 +18,25 @@ export function Sidebar() {
 
   return (
     <aside className="sidebar t-panel-reveal" data-state="in">
+      <div className="side-block search-block">
+        <label className="side-label search-label" htmlFor="board-search">
+          Search the wall
+        </label>
+        <input
+          id="board-search"
+          className="field search-field"
+          placeholder="Find a pin by text, tag, or URL…"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          data-testid="search-input"
+        />
+        {search.trim() && (
+          <button type="button" className="btn tiny ghost clear-search" onClick={() => setSearch('')}>
+            Clear search
+          </button>
+        )}
+      </div>
+
       <div className="side-block">
         <div className="side-head">
           <h2>Boards</h2>
@@ -54,20 +73,6 @@ export function Sidebar() {
             )
           })}
         </ul>
-      </div>
-
-      <div className="side-block">
-        <label className="side-label" htmlFor="board-search">
-          Search
-        </label>
-        <input
-          id="board-search"
-          className="field"
-          placeholder="Find a pin…"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          data-testid="search-input"
-        />
       </div>
 
       <div className="side-block">

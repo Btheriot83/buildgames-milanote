@@ -33,6 +33,28 @@ export default function App() {
             <span>Brief in · Wall out</span>
             <span>Ochre pins</span>
           </div>
+          <nav className="job-rail" aria-label="Core job">
+            <ol>
+              <li className="job-step on">
+                <span className="job-num">1</span>
+                <span className="job-label">Pin notes &amp; links</span>
+              </li>
+              <li className="job-arrow" aria-hidden>
+                →
+              </li>
+              <li className="job-step">
+                <span className="job-num">2</span>
+                <span className="job-label">Search the wall</span>
+              </li>
+              <li className="job-arrow" aria-hidden>
+                →
+              </li>
+              <li className="job-step">
+                <span className="job-num">3</span>
+                <span className="job-label">Export MD / JSON</span>
+              </li>
+            </ol>
+          </nav>
           <ShellChrome />
           <div className="workspace">
             <Sidebar />

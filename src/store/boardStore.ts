@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { nanoid } from 'nanoid'
 import { clearSnapshot, loadSnapshot, saveSnapshot } from '../lib/db'
 import { exportJson, exportMarkdown, parseImport } from '../lib/export'
-import { makeSample } from '../lib/sample'
+import { CONTENT_VERSION, makeSample, needsContentRefresh } from '../lib/sample'
 import type { Board, CaptureKind, Card, CardKind, Snapshot } from '../lib/types'
 
 type LoadStatus = 'boot' | 'loading' | 'ready' | 'error'
@@ -75,6 +75,7 @@ function emptySnap(): Snapshot {
 function snapshotOf(s: BoardState): Snapshot {
   return {
     version: 1,
+    contentVersion: CONTENT_VERSION,
     boards: s.boards,
     cards: s.cards,
     activeBoardId: s.activeBoardId,
@@ -123,16 +124,17 @@ export const useBoard = create<BoardState>((set, get) => ({
     set({ loadStatus: 'loading' })
     try {
       let snap = await loadSnapshot()
-      if (!snap || !snap.boards.length) {
+      if (needsContentRefresh(snap)) {
         snap = makeSample()
         await saveSnapshot(snap)
       }
+      const ready = snap ?? makeSample()
       set({
         loadStatus: 'ready',
-        boards: snap.boards,
-        cards: snap.cards,
-        activeBoardId: snap.activeBoardId ?? snap.boards[0]?.id ?? null,
-        seeded: snap.seeded,
+        boards: ready.boards,
+        cards: ready.cards,
+        activeBoardId: ready.activeBoardId ?? ready.boards[0]?.id ?? null,
+        seeded: ready.seeded,
       })
     } catch {
       const snap = makeSample()
@@ -335,7 +337,7 @@ export const useBoard = create<BoardState>((set, get) => ({
 
   exportBackup: () => {
     exportJson(snapshotOf(get()))
-    get().showToast('Backup saved')
+    get().showToast('JSON export saved')
     get().triggerSuccess()
   },
 
@@ -348,7 +350,7 @@ export const useBoard = create<BoardState>((set, get) => ({
     }
     const cards = s.cards.filter((c) => c.boardId === board.id)
     exportMarkdown(board, cards)
-    get().showToast('Markdown pulled')
+    get().showToast('Markdown export saved')
     get().triggerSuccess()
   },
 
@@ -385,7 +387,7 @@ export const useBoard = create<BoardState>((set, get) => ({
       pan: { x: 0, y: 0 },
       zoom: 1,
     })
-    get().showToast('Sample wall back')
+    get().showToast('Starter wall restored')
   },
 
   showToast: (message, tone = 'ok') => {

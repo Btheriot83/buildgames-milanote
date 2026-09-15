@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { clusterBriefLocal, layoutClustered, type BriefBoardResult } from '../lib/boardFromBrief'
 import { useBoard } from '../store/boardStore'
 
-const SAMPLE = `Documentary short — desert diner at dusk
+const DINER_BRIEF = `Documentary short — desert diner at dusk
 Warm practicals, soft grain, ochre booths vs teal neon
 References: https://milanote.com/
 Shot list: establishing wide, booth CU, pie plate insert, rain on glass
@@ -69,7 +69,7 @@ export function BriefBoard() {
             </button>
           </div>
           <p className="brief-lede">
-            Dump the messy notes, shot list, links. We sort them into columns and pin cards — nothing else.
+            Dump the messy notes, shot list, links. We sort them into columns and pin cards. Then search and export the wall.
           </p>
           <textarea
             className="field area brief-input"
@@ -92,8 +92,8 @@ export function BriefBoard() {
             </div>
           )}
           <div className="brief-actions">
-            <button type="button" className="btn ghost" onClick={() => setBrief(SAMPLE)}>
-              Use diner sample
+            <button type="button" className="btn ghost" onClick={() => setBrief(DINER_BRIEF)}>
+              Load diner brief
             </button>
             <button
               type="button"

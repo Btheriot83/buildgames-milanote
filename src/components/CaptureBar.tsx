@@ -20,7 +20,11 @@ export function CaptureBar() {
   }
 
   return (
-    <div className={`capture-bar ${shake ? 't-error-shake' : ''}`} data-state={shake ? 'in' : undefined}>
+    <div className={`capture-bar capture-bar-hero ${shake ? 't-error-shake' : ''}`} data-state={shake ? 'in' : undefined}>
+      <div className="capture-job-label">
+        <span className="capture-verb">Pin</span>
+        <span className="capture-hint">onto the wall</span>
+      </div>
       <div className="mode-tabs t-tabs-sliding" data-active={mode}>
         <span className="tab-glider" aria-hidden />
         {MODES.map((m) => (
@@ -39,7 +43,7 @@ export function CaptureBar() {
         data-testid="capture-input"
         placeholder={
           mode === 'link'
-            ? 'Drop a link. #tags stick.'
+            ? 'Paste a link. #tags stick.'
             : mode === 'image'
               ? 'Image URL or a short placard label #refs'
               : 'Write it once. #tag it. Pin it.'
@@ -54,8 +58,8 @@ export function CaptureBar() {
         }}
         aria-label="Capture"
       />
-      <button type="button" className="btn solid" data-testid="capture-submit" onClick={submit}>
-        Pin
+      <button type="button" className="btn solid pin-cta" data-testid="capture-submit" onClick={submit}>
+        Pin to wall
       </button>
       <button type="button" className="btn ghost" onClick={() => addColumn()}>
         Column

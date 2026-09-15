@@ -21,3 +21,20 @@
 
 ## Not counted
 IDENTITY.md / workbench prose without stage change.
+
+---
+
+# Phase B2 visible delta (2026-09-14 ~9:20pm PT)
+
+**Identity:** Still **Atelier Pinwall** (no reseed).  
+**Proof:** `screenshots/r2/r0-baseline-live.png` → `screenshots/r2/r10-final.png`
+
+## Five visible deltas (spot in <3s)
+1. **Job rail** — Numbered pill: Pin notes & links → Search the wall → Export MD / JSON (new under atelier tape).
+2. **Real film wall** — Title **Desert Diner · Lookbook**; no “(sample)”; diner columns + cast/location notes.
+3. **Export chrome** — Buttons read **Export MD** / **Export JSON**; **Reset wall** replaces Sample.
+4. **Pin to wall CTA** — Capture bar hero with ochre **Pin to wall** and Pin verb label.
+5. **Search-first sidebar** — “Search the wall” leads the left rail; match chip on the cork when filtering.
+
+## Not counted
+Docs / status JSON without stage change; contentVersion migration alone.

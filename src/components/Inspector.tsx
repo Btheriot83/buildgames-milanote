@@ -13,7 +13,12 @@ export function Inspector() {
     return (
       <aside className="inspector muted-panel">
         <h2>Inspector</h2>
-        <p className="muted">Click a pin. Title, body, tags, color — all here.</p>
+        <p className="muted">Click a pin to edit. Core loop: pin notes &amp; links → search → export MD/JSON.</p>
+        <ol className="inspector-job">
+          <li>Pin from the bar</li>
+          <li>Search / tag-filter</li>
+          <li>Export the wall</li>
+        </ol>
       </aside>
     )
   }

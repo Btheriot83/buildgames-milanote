@@ -7,6 +7,14 @@ type Props = {
   selected: boolean
 }
 
+function hostLabel(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '')
+  } catch {
+    return url.replace(/^https?:\/\//, '').slice(0, 40)
+  }
+}
+
 export function CardTile({ card, selected, fresh }: Props & { fresh?: boolean }) {
   const selectCard = useBoard((s) => s.selectCard)
   const setEditing = useBoard((s) => s.setEditing)
@@ -57,8 +65,9 @@ export function CardTile({ card, selected, fresh }: Props & { fresh?: boolean })
         <img className="card-img" src={card.imageDataUrl} alt={card.title || 'Board image'} draggable={false} />
       )}
       {card.kind === 'link' && card.url && (
-        <a className="card-link" href={card.url} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
-          {card.url.replace(/^https?:\/\//, '')}
+        <a className="card-link-chip" href={card.url} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+          <span className="link-mark" aria-hidden />
+          <span className="link-host">{hostLabel(card.url)}</span>
         </a>
       )}
       {card.body && card.kind !== 'image' && <p className="card-body">{card.body}</p>}

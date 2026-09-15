@@ -17,7 +17,7 @@ export function ShellChrome() {
         <img className="brand-mark-img" src="/assets/brand-mark.png" alt="" width={52} height={52} />
         <div>
           <h1 className="brand-title">Draftwall</h1>
-          <p className="brand-sub">Brief in. Wall out.</p>
+          <p className="brand-sub">Pin notes &amp; links. Search. Export.</p>
         </div>
       </div>
       <div className="chrome-stats" aria-label="Board counts">
@@ -32,22 +32,22 @@ export function ShellChrome() {
           <span className="t-number-pop" data-state="in" key={cards.length}>
             {cards.length}
           </span>{' '}
-          cards
+          pins
         </span>
       </div>
       <BriefBoard />
       <div className="chrome-actions">
-        <button type="button" className="btn ghost" onClick={() => void resetSample()}>
-          Sample
+        <button type="button" className="btn ghost" onClick={() => void resetSample()} title="Restore the Desert Diner starter wall">
+          Reset wall
         </button>
         <button type="button" className="btn ghost" onClick={() => fileRef.current?.click()}>
           Import
         </button>
-        <button type="button" className="btn ghost" onClick={() => exportBoardMd()}>
-          MD
+        <button type="button" className="btn ghost export-btn" data-testid="export-md" onClick={() => exportBoardMd()}>
+          Export MD
         </button>
-        <button type="button" className="btn ghost" onClick={() => exportBackup()}>
-          JSON
+        <button type="button" className="btn ghost export-btn" data-testid="export-json" onClick={() => exportBackup()}>
+          Export JSON
         </button>
         <input
           ref={fileRef}
