@@ -18,3 +18,6 @@
 - Cut: multiplayer, cloud sync, sharing links, mature importers, template marketplace (paid advantages).
 - transitions.dev free recipes in real UX: success-check, toast, skeleton-reveal, texts-reveal, tabs-sliding, number-pop-in, error-state-shake, panel-reveal, card-tilt.
 - Anti-slop: no vibe-purple, no Inter, no 3-card marketing hero, no fake stats banner, no emoji nav.
+
+## Live
+- Demo: https://buildgames-milanote.vercel.app (App Desk smoke 2026-09-14 PT: capture note + search tag + JSON export OK, HTTP 200).
