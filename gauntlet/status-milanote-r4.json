@@ -11,13 +11,34 @@
   "path": "/workspace/build-games/apps/milanote",
   "roundsCounted": 20,
   "roundShas": [
-    "e14c36b", "89bc0c2", "1f0b98e", "7ac4381", "6830d50",
-    "88e43ba", "771f0d2", "0358ba6", "d286c01", "1434a94",
-    "5869a50", "9f7f135", "89d0209", "d75f11d", "505044c",
-    "b4d0649", "e12bd8d", "a049d23", "ea44268", "1f00128"
+    "e14c36b",
+    "89bc0c2",
+    "1f0b98e",
+    "7ac4381",
+    "6830d50",
+    "88e43ba",
+    "771f0d2",
+    "0358ba6",
+    "d286c01",
+    "1434a94",
+    "5869a50",
+    "9f7f135",
+    "89d0209",
+    "d75f11d",
+    "505044c",
+    "b4d0649",
+    "e12bd8d",
+    "a049d23",
+    "ea44268",
+    "1f00128"
   ],
   "shotCount": 25,
-  "barShotRounds": [5, 10, 15, 20],
+  "barShotRounds": [
+    5,
+    10,
+    15,
+    20
+  ],
   "barShotNote": "Live milanote.com headless crashed/timed out; used prior live home capture for A/B refs",
   "dreamLoop": {
     "baseline": "apps/milanote/.dream-loop/baseline.png",
@@ -25,20 +46,27 @@
     "targetShotCopy": "apps/milanote/gauntlet/shots-r4/dream-target.png",
     "generator": "higgsfield gpt_image_2_5",
     "jobId": "5d7e4751-ff69-4885-b742-e87f609920d2",
-    "closingRounds": [8, 10, 12, 16, 18, 20]
+    "closingRounds": [
+      8,
+      10,
+      12,
+      16,
+      18,
+      20
+    ]
   },
   "transitionsDev": {
     "wiredOnRealActions": true,
     "recipes": [
-      "skeleton-reveal→boot",
-      "texts-reveal→app-frame",
-      "toast.is-open→showToast",
-      "success-check→triggerSuccess",
-      "error-state-shake→empty pin",
-      "tabs-sliding→mode tabs",
-      "number-pop-in→counts",
-      "panel-reveal→brief panel",
-      "pin-settle→new card"
+      "skeleton-reveal\u2192boot",
+      "texts-reveal\u2192app-frame",
+      "toast.is-open\u2192showToast",
+      "success-check\u2192triggerSuccess",
+      "error-state-shake\u2192empty pin",
+      "tabs-sliding\u2192mode tabs",
+      "number-pop-in\u2192counts",
+      "panel-reveal\u2192brief panel",
+      "pin-settle\u2192new card"
     ]
   },
   "honestNotes": [
@@ -49,5 +77,15 @@
   "workbench": "apps/milanote/gauntlet/workbench-r4.md",
   "doNotMessageBrandon": true,
   "finishedAtUtc": "2026-09-15T05:16:34Z",
-  "finishedAtPt": "2026-09-14 10:16 PM PT"
+  "finishedAtPt": "2026-09-14 10:16 PM PT",
+  "pr": [
+    "https://github.com/Btheriot83/buildgames-milanote/pull/5"
+  ],
+  "deployment": {
+    "id": "dpl_81aLq3KfF22FUUAsiNJLXxzKJAdy",
+    "url": "https://buildgames-milanote.vercel.app",
+    "alias": "https://buildgames-milanote.vercel.app"
+  },
+  "live_http": 200,
+  "mainSha": "5869057"
 }
