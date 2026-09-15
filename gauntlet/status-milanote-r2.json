@@ -72,5 +72,21 @@
     "materials": "flat ink/chalk + cork photo",
     "identityStill": "Atelier Pinwall",
     "reseeded": false
-  }
+  },
+  "mainSha": "25192f5",
+  "live_http": 200,
+  "live_smoke": {
+    "ok": true,
+    "at_pt": "2026-09-14 9:23 PM PT",
+    "checks": [
+      "HTTP 200",
+      "flat-bar CSS live (no chrome gradients)",
+      "Desert Diner starter + job rail retained",
+      "Atelier Pinwall locked / no reseed"
+    ]
+  },
+  "pr": [
+    "https://github.com/Btheriot83/buildgames-milanote/pull/2",
+    "https://github.com/Btheriot83/buildgames-milanote/pull/3"
+  ]
 }
