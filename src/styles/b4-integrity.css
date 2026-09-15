@@ -120,3 +120,9 @@
 }
 .export-btn.btn.secondary { min-width: 6.5rem; }
 .mode-tabs.t-tabs { position: relative; }
+
+/* —— r16 bar gap / dream-loop —— */
+.board-meta { gap: 4px; }
+.board-meta p { line-height: 1.35; }
+.atelier-tape { font-size: 0.58rem; letter-spacing: 0.1em; padding: 0.28rem 0.7rem; }
+.workspace { gap: 8px; }
