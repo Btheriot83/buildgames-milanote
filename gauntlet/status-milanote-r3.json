@@ -2,17 +2,26 @@
   "slug": "milanote",
   "product": "Draftwall",
   "phase": "B3",
-  "status": "gauntlet_r3_complete_craft",
+  "status": "gauntlet_r3_complete_craft_live",
   "identity": "Atelier Pinwall",
   "identityFrozen": true,
   "reseeded": false,
   "demoUrl": "https://buildgames-milanote.vercel.app",
   "barUrl": "https://milanote.com/",
   "path": "/workspace/build-games/apps/milanote",
-  "job": "Pin notes/links on a visual board → search → export (≤3s)",
+  "job": "Pin notes/links on a visual board \u2192 search \u2192 export (\u22643s)",
   "phaseA": {
     "done": true,
-    "techniquesDone": [1, 2, 3, 4, 5, 6, 7, 8],
+    "techniquesDone": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "identityPath": "docs/IDENTITY.md"
   },
   "phaseB": {
@@ -29,7 +38,13 @@
     "roundsCompleted": 20,
     "roundsTarget": 20,
     "workbench": "gauntlet/workbench-r3.md",
-    "focus": ["fonts", "contrast", "buttons", "milanote_board_craft_ab", "flat_no_gradient"],
+    "focus": [
+      "fonts",
+      "contrast",
+      "buttons",
+      "milanote_board_craft_ab",
+      "flat_no_gradient"
+    ],
     "contentVersion": 3,
     "baselineScore": 7.9,
     "finalCriticScore": 8.7,
@@ -41,7 +56,8 @@
     "proof": [
       "gauntlet/screenshots/r3/r0-baseline-demo.png",
       "gauntlet/screenshots/r3/r0-bar-milanote-home.png",
-      "gauntlet/screenshots/r3/r20-final.png"
+      "gauntlet/screenshots/r3/r20-final.png",
+      "gauntlet/screenshots/r3/r20-live-final.png"
     ],
     "bullets": [
       "From brief outline secondary (Pin is sole solid primary)",
@@ -62,7 +78,28 @@
     "reseeded": false
   },
   "doNotMessageBrandon": true,
-  "notes": "Phase B3 twenty rounds — fonts/contrast/buttons + close A/B vs milanote.com under locked Atelier Pinwall. Flat no-gradient held. Do not message Brandon.",
-  "finishedAtUtc": "2026-09-15T04:38:00Z",
-  "finishedAtPt": "2026-09-14 9:38 PM PT"
+  "notes": "Phase B3 twenty rounds \u2014 fonts/contrast/buttons + close A/B vs milanote.com under locked Atelier Pinwall. Flat no-gradient held. Live redeployed. Do not message Brandon.",
+  "finishedAtUtc": "2026-09-15T04:40:36Z",
+  "finishedAtPt": "2026-09-14 9:40 PM PT",
+  "mainSha": "55d4f2d",
+  "live_http": 200,
+  "live_smoke": {
+    "ok": true,
+    "at_pt": "2026-09-14 9:40 PM PT",
+    "checks": [
+      "HTTP 200",
+      "btn hierarchy live (From brief secondary, Pin solid, Export secondary)",
+      "--muted #b4bcc6 contrast token live",
+      "zero linear-gradient in production CSS",
+      "Desert Diner starter + Atelier Pinwall locked / no reseed"
+    ]
+  },
+  "deployment": {
+    "id": "dpl_BWN9fzRFzHpk17nJkHbXxgzjnFFM",
+    "url": "https://buildgames-milanote.vercel.app",
+    "alias": "https://buildgames-milanote.vercel.app"
+  },
+  "pr": [
+    "https://github.com/Btheriot83/buildgames-milanote/pull/4"
+  ]
 }
