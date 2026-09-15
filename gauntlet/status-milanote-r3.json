@@ -1,0 +1,68 @@
+{
+  "slug": "milanote",
+  "product": "Draftwall",
+  "phase": "B3",
+  "status": "gauntlet_r3_complete_craft",
+  "identity": "Atelier Pinwall",
+  "identityFrozen": true,
+  "reseeded": false,
+  "demoUrl": "https://buildgames-milanote.vercel.app",
+  "barUrl": "https://milanote.com/",
+  "path": "/workspace/build-games/apps/milanote",
+  "job": "Pin notes/links on a visual board → search → export (≤3s)",
+  "phaseA": {
+    "done": true,
+    "techniquesDone": [1, 2, 3, 4, 5, 6, 7, 8],
+    "identityPath": "docs/IDENTITY.md"
+  },
+  "phaseB": {
+    "roundsCompleted": 5,
+    "roundsTarget": 5,
+    "workbench": "gauntlet/workbench.md"
+  },
+  "phaseB2": {
+    "roundsCompleted": 10,
+    "roundsTarget": 10,
+    "workbench": "gauntlet/workbench-r2.md"
+  },
+  "phaseB3": {
+    "roundsCompleted": 20,
+    "roundsTarget": 20,
+    "workbench": "gauntlet/workbench-r3.md",
+    "focus": ["fonts", "contrast", "buttons", "milanote_board_craft_ab", "flat_no_gradient"],
+    "contentVersion": 3,
+    "baselineScore": 7.9,
+    "finalCriticScore": 8.7,
+    "flatBarHeld": true,
+    "gradientsInSrc": 0
+  },
+  "visibilityGate": {
+    "ok": true,
+    "proof": [
+      "gauntlet/screenshots/r3/r0-baseline-demo.png",
+      "gauntlet/screenshots/r3/r0-bar-milanote-home.png",
+      "gauntlet/screenshots/r3/r20-final.png"
+    ],
+    "bullets": [
+      "From brief outline secondary (Pin is sole solid primary)",
+      "Export MD/JSON ochre secondary outlines",
+      "Quieter dark atelier tape (not ochre banner)",
+      "Ink chrome shadows; ochre reserved for CTAs/pins",
+      "Paper cards + column top strips; stronger type/contrast"
+    ]
+  },
+  "antiSlopCleared": true,
+  "brandonFlatBar": {
+    "applied": true,
+    "gradientsStripped": true,
+    "glassBlurKilled": true,
+    "glowKilled": true,
+    "materials": "flat ink/chalk + cork photo",
+    "identityStill": "Atelier Pinwall",
+    "reseeded": false
+  },
+  "doNotMessageBrandon": true,
+  "notes": "Phase B3 twenty rounds — fonts/contrast/buttons + close A/B vs milanote.com under locked Atelier Pinwall. Flat no-gradient held. Do not message Brandon.",
+  "finishedAtUtc": "2026-09-15T04:38:00Z",
+  "finishedAtPt": "2026-09-14 9:38 PM PT"
+}
