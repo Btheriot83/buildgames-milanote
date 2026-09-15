@@ -102,3 +102,13 @@ Mobbin: paid-gated → comps = live milanote.com + prior Phase B shots.
 
 ## Visibility gate
 Human who saw pre-R2 live demo spots in ≤3s: (1) job rail, (2) Desert Diner title (no SAMPLE), (3) Export MD/JSON, (4) Pin to wall CTA, (5) search-first sidebar. Proof: `screenshots/r2/r0-baseline-live.png` vs `r10-final.png` and `VISIBLE_DELTA.md` R2 section.
+
+---
+
+## Carry-forward — Brandon flat bar (Inkwell, ALL apps)
+Applied after R10 ship under locked Atelier Pinwall (no reseed):
+- Strip decorative linear/radial/mesh gradients from chrome
+- Flat ink/chalk fills; cork board uses real `wall-cork.jpg` photo + flat chalk overlay
+- Kill glass blur (transition blur vars = 0) and soft glow/bloom shadows
+- Flat clay pin heads; hard ochre/ink offset shadows
+**Shot:** `screenshots/r2/r10-flat-chrome.png`

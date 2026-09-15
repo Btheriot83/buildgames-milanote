@@ -38,3 +38,10 @@ IDENTITY.md / workbench prose without stage change.
 
 ## Not counted
 Docs / status JSON without stage change; contentVersion migration alone.
+
+## Flat bar delta (Brandon / Inkwell carry-forward)
+1. No chrome gradients — shell, veil, pins, skeletons, board wash are flat fills.
+2. Cork is a photo — wall-cork.jpg under flat chalk overlay (no linear veil).
+3. Hard offsets — ochre/ink box-shadow offsets replace soft bloom/glow.
+4. Flat clay pins — solid clay circles, no radial highlight.
+5. Motion blur off — transition blur vars zeroed; shimmer gradient disabled.
