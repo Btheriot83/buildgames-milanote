@@ -74,3 +74,9 @@
 .board-viewport { min-height: 600px; background-color: #f3eee4; }
 .board-hint { color: #4a433a !important; font-weight: 500 !important; font-size: 0.78rem !important; }
 .side-label { color: #d0d7df; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.68rem; }
+
+/* —— r11 buttons —— */
+.btn.ghost { color: #9aa6b2; border: 1px solid transparent; }
+.btn.ghost:hover { color: #f3eee4; background: #1c2630; border-color: #3a4654; }
+.pin-cta { font-size: 1rem; min-width: 7.5rem; }
+.column-cta { opacity: 0.7; }
