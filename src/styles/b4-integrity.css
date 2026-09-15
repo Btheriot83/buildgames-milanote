@@ -103,3 +103,12 @@
 }
 .inspector-job { font-size: 0.8rem; line-height: 1.45; }
 .field, .field textarea { font-size: 0.86rem; }
+
+/* —— r14 contrast —— */
+.search-field {
+  background: #0c1218;
+  color: #f3eee4;
+  border-color: #d4ae55;
+}
+.search-field::placeholder { color: #7a8694; }
+.capture-input.field::placeholder { color: #8a949e; }
